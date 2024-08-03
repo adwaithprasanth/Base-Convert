@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Base Converter</h1>
+        <form method="POST">
+            <label for="number">Enter the number to convert:</label>
+            <input type="text" name="number" required><br>
+            <label for="from_base">From Base:</label>
+            <input type="number" name="from_base" required><br>
+            <label for="to_base">To Base:</label>
+            <input type="number" name="to_base" required><br>
+            <button type="submit">Convert</button>
+        </form>
+        {% if result %}
+            <div class="result">
+                <h2>Converted Number: {{ result }}</h2>
+            </div>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
